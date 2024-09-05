@@ -1,12 +1,19 @@
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import VueRouter from 'vue-router'
+import App from 'components/App.vue'
+import Routers from './router.js'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 
-Vue.config.productionTip = false
-
+Vue.use(VueRouter)
+Vue.use(iView)
+//  The routing configuration
+const RouterConfig = {
+  routes: Routers
+}
+const router = new VueRouter(RouterConfig)
 new Vue({
+  el: '#app',
   router,
-  store,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+  render: (h) => h(App),
+})
