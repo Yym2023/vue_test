@@ -1,13 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+import ViewUIPlus from 'view-ui-plus'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import uView from "uview-ui"
-Vue.use(uView)
-Vue.config.productionTip = false
+import 'view-ui-plus/dist/styles/viewuiplus.css'
 
-new Vue({
-  router,
-  store,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+const app = createApp(App)
+
+app.use(store)
+  .use(router)
+  .use(ViewUIPlus)
+  .mount('#app')
