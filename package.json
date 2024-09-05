@@ -22,10 +22,7 @@
     "sass-loader": "^12.6.0",
     "vue-template-compiler": "^2.6.14"
   },
-  "easycom": {
-    "autoscan": true,
-    "custom": {
-      "^uv-(.*)": "@climblee/uv-ui/components/uv-$1/uv-$1.vue"
-    }
-  }
+ "easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	}
 }
